@@ -6,3 +6,8 @@ export async function loginUsuario(email, password) {
   const response = await api.post('/auth/login-admin', { email, password });
   return response.data;
 }
+
+export async function obtenerSesionActual() {
+  const response = await api.get('/auth/me');
+  return response.data;
+}

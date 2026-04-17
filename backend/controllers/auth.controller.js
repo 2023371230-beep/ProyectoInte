@@ -52,4 +52,16 @@ async function loginAdmin(req, res) {
   }
 }
 
-module.exports = { login, loginAdmin, register };
+// Verifica sesión activa para el panel web.
+async function me(req, res) {
+  try {
+    const usuario = await authService.obtenerSesionAdmin(req.usuario.id_usuario);
+    res.json({ usuario });
+  } catch (err) {
+    const esAccesoDenegado = err.message.includes('solo para administradores');
+    const codigo = esAccesoDenegado ? 403 : 401;
+    res.status(codigo).json({ error: err.message });
+  }
+}
+
+module.exports = { login, loginAdmin, register, me };

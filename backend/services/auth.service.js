@@ -119,4 +119,33 @@ async function loginAdmin(email, password) {
   return { token, usuario: payload };
 }
 
-module.exports = { login, loginAdmin, register };
+// Valida que el token pertenezca a un admin activo.
+async function obtenerSesionAdmin(idUsuario) {
+  const result = await db.query(
+    'SELECT id_usuario, nombre, email, rol, activo FROM usuarios WHERE id_usuario = $1',
+    [idUsuario]
+  );
+
+  if (result.rows.length === 0) {
+    throw new Error('Usuario no encontrado.');
+  }
+
+  const usuario = result.rows[0];
+
+  if (!usuario.activo) {
+    throw new Error('Esta cuenta ha sido desactivada.');
+  }
+
+  if (usuario.rol !== 'admin') {
+    throw new Error('Acceso denegado. Esta plataforma es solo para administradores.');
+  }
+
+  return {
+    id_usuario: usuario.id_usuario,
+    nombre: usuario.nombre,
+    email: usuario.email,
+    rol: usuario.rol,
+  };
+}
+
+module.exports = { login, loginAdmin, register, obtenerSesionAdmin };

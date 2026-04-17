@@ -9,7 +9,13 @@ async function obtenerResumen() {
     db.query('SELECT COUNT(*) AS total FROM clientes'),
     db.query('SELECT COUNT(*) AS total FROM medicamentos'),
     db.query('SELECT COUNT(*) AS total FROM videos'),
-    db.query("SELECT COUNT(*) AS total FROM suscripciones WHERE estado = 'activa'"),
+    db.query(`
+      SELECT COUNT(*) AS total
+      FROM suscripciones s
+      JOIN usuarios u ON u.id_usuario = s.id_usuario
+      WHERE s.estado = 'activa'
+        AND u.activo = true
+    `),
     db.query('SELECT COALESCE(SUM(monto), 0) AS total FROM pagos'),
   ]);
 

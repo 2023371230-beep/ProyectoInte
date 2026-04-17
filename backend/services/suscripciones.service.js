@@ -15,6 +15,7 @@ async function obtenerTodas() {
       s.fecha_inicio
     FROM suscripciones s
     JOIN usuarios u ON u.id_usuario = s.id_usuario
+    WHERE u.activo = true
     ORDER BY s.id_suscripcion DESC
   `);
   return result.rows;
@@ -33,6 +34,7 @@ async function obtenerPorId(id) {
     FROM suscripciones s
     JOIN usuarios u ON u.id_usuario = s.id_usuario
     WHERE s.id_suscripcion = $1
+      AND u.activo = true
   `, [id]);
   if (result.rows.length === 0) throw new Error('Suscripción no encontrada.');
   return result.rows[0];

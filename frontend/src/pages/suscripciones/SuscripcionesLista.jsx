@@ -33,10 +33,6 @@ export default function SuscripcionesLista() {
   const [editandoId, setEditandoId]       = useState(null);
   const [editForm, setEditForm]           = useState({ plan: '', estado: '' });
 
-  useEffect(() => {
-    cargar();
-  }, []);
-
   async function cargar() {
     try {
       const datos = await obtenerSuscripciones();
@@ -45,6 +41,22 @@ export default function SuscripcionesLista() {
       setError('No se pudieron cargar las suscripciones.');
     }
   }
+
+  useEffect(() => {
+    let activo = true;
+
+    obtenerSuscripciones()
+      .then((datos) => {
+        if (activo) setSuscripciones(datos);
+      })
+      .catch(() => {
+        if (activo) setError('No se pudieron cargar las suscripciones.');
+      });
+
+    return () => {
+      activo = false;
+    };
+  }, []);
 
   function iniciarEdicion(s) {
     setEditandoId(s.id_suscripcion);
