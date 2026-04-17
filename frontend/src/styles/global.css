@@ -110,7 +110,7 @@ body {
 
 .btn-sm {
   padding: 6px 12px;
-  min-height: 36px;
+  min-height: 40px;
   font-size: var(--font-size-sm);
 }
 
@@ -133,12 +133,15 @@ body {
   background-color: #ffffff;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--color-border);
 }
 
 .table {
   width: 100%;
+  min-width: 640px;
   border-collapse: collapse;
   font-size: var(--font-size-base);
 }
@@ -242,6 +245,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-bottom: 24px;
 }
 
@@ -506,7 +511,44 @@ body {
     padding: 16px;
   }
 
+  .search-bar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-header {
+    align-items: stretch;
+  }
+
+  .page-header > * {
+    width: 100%;
+  }
+
+  .page-header .btn {
+    justify-content: center;
+  }
+
+  .flex.gap-16 {
+    flex-wrap: wrap;
+  }
+
+  .form-actions,
+  .modal-body .flex.gap-16,
+  .modal-body .flex.gap-8 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-actions .btn,
+  .modal-body .flex.gap-16 .btn,
+  .modal-body .flex.gap-8 .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .modal-panel {
+    width: 100%;
+    max-width: min(96vw, 620px) !important;
     max-height: 95vh;
   }
 

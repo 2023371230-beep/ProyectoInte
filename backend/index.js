@@ -14,6 +14,7 @@ const videosRoutes        = require('./routes/videos.routes');
 const suscripcionesRoutes = require('./routes/suscripciones.routes');
 const pagosRoutes         = require('./routes/pagos.routes');
 const dashboardRoutes     = require('./routes/dashboard.routes');
+const reportesRoutes      = require('./routes/reportes.routes');
 const db                  = require('./db');
 
 // ─── App ─────────────────────────────────────────────────
@@ -39,6 +40,7 @@ app.use('/api/videos',        videosRoutes);
 app.use('/api/suscripciones', suscripcionesRoutes);
 app.use('/api/pagos',         pagosRoutes);
 app.use('/api/dashboard',     dashboardRoutes);
+app.use('/api/reportes',      reportesRoutes);
 
 // Ruta de estado — útil para saber si el servidor está vivo
 app.get('/api/status', (req, res) => {

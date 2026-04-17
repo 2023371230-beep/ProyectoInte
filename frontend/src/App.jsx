@@ -13,6 +13,7 @@ import AsignarMedicamento from './pages/medicamentos/AsignarMedicamento';
 import VideosLista        from './pages/videos/VideosLista';
 import AsignarVideo       from './pages/videos/AsignarVideo';
 import SuscripcionesLista from './pages/suscripciones/SuscripcionesLista';
+import ReportesAdmin      from './pages/reportes/ReportesAdmin';
 
 // Estilos globales
 import './styles/global.css';
@@ -52,6 +53,9 @@ export default function App() {
 
             {/* Suscripciones */}
             <Route path="suscripciones" element={<SuscripcionesLista />} />
+
+            {/* Reportes */}
+            <Route path="reportes" element={<ReportesAdmin />} />
           </Route>
 
           {/* Cualquier ruta desconocida va al inicio */}

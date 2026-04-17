@@ -29,6 +29,11 @@ const icons = {
       <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
     </svg>
   ),
+  reportes: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4 2h12l4 4v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm11 1.5V7h3.5L15 3.5zM6 11h12v1.5H6V11zm0 4h12v1.5H6V15zm0 4h8v1.5H6V19z"/>
+    </svg>
+  ),
   logout: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
       <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
@@ -42,6 +47,7 @@ const navItems = [
   { to: '/admin/medicamentos',  label: 'Medicamentos',   icon: icons.medicamentos },
   { to: '/admin/videos',        label: 'Videos',         icon: icons.videos },
   { to: '/admin/suscripciones', label: 'Suscripciones',  icon: icons.suscripciones },
+  { to: '/admin/reportes',      label: 'Reportes',       icon: icons.reportes },
 ];
 
 export default function Sidebar() {
