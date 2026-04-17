@@ -1,0 +1,47 @@
+/* =====================================================
+   PALETA DE COLORES - Discapacidad sin Barreras
+   Fuente: Investigacion.pdf — paleta monocromática
+   verde oliva/menta para transmitir calma y salud.
+   ===================================================== */
+:root {
+  /* Colores principales del proyecto */
+  --color-primary:    #728156;  /* Branding, encabezados, botones CTA */
+  --color-secondary:  #88976C;  /* Iconos, estados secundarios */
+  --color-accent-1:   #B6C99C;  /* Tarjetas, separadores */
+  --color-accent-2:   #CFE1BB;  /* Paneles secundarios, fondos de sección */
+  --color-bg:         #E8F4DC;  /* Fondo general — reduce eye strain */
+
+  /* Colores para estados (WCAG: nunca solo color, siempre + icono) */
+  --color-error:      #D32F2F;  /* Rojo para errores */
+  --color-warning:    #FBC02D;  /* Amarillo para advertencias */
+  --color-success:    #388E3C;  /* Verde oscuro para éxito */
+
+  /* Texto */
+  --color-text-dark:  #2C2C2C;  /* Texto principal sobre fondos claros */
+  --color-text-light: #FFFFFF;  /* Texto sobre fondos oscuros (primary) */
+  --color-text-muted: #5A6340;  /* Texto secundario / placeholders */
+
+  /* Bordes y sombras */
+  --color-border:     #B6C99C;
+  --shadow-card:      0 2px 8px rgba(114, 129, 86, 0.15);
+  --shadow-sidebar:   2px 0 12px rgba(114, 129, 86, 0.12);
+
+  /* Sidebar */
+  --sidebar-width: 240px;
+
+  /* Tipografía */
+  --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-size-base: 14px;
+  --font-size-sm:   12px;
+  --font-size-lg:   16px;
+  --font-size-xl:   20px;
+  --font-size-2xl:  24px;
+
+  /* Espaciado */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+
+  /* Transiciones */
+  --transition: 0.2s ease;
+}

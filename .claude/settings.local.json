@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(npx vite *)",
+      "Bash(cat \"c:/xampp/htdocs/Integradora_chidisimo1/Integradora_chidisimo/proyecto_analisis_chido_chidote/config/\"*.php)",
+      "Bash(node seed.js)",
+      "Bash(timeout 5 node index.js)",
+      "Bash(timeout 6 node index.js)",
+      "Bash(node -e ' *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3001)",
+      "Bash(powershell -Command \"Get-Process -Id 26852 | Select-Object Name,Id,MainWindowTitle\")",
+      "Bash(curl -v -X POST http://localhost:3001/api/auth/login -H \"Content-Type: application/json\" -d \"{\\\\\"email\\\\\":\\\\\"admin@clinica.com\\\\\",\\\\\"password\\\\\":\\\\\"Admin123!\\\\\"}\")",
+      "Bash(node crear_roman.js)",
+      "Bash(rm -rf admin/ cliente/ config/ lib/ assets/ tools/ logs/ Contexto/ Imagenes/)",
+      "Bash(rm -f index.php actualizar_bd.php iniciar_sesion.php logout.php registro.php ce-combinado.pdf)"
+    ]
+  }
+}

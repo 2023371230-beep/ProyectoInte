@@ -1,0 +1,190 @@
+/* =====================================================
+   SIDEBAR - Panel Administrativo
+   ===================================================== */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  box-shadow: var(--shadow-sidebar);
+  z-index: 100;
+  transition: transform var(--transition);
+}
+
+/* --- Branding --- */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.sidebar-brand-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-accent-2);
+  color: var(--color-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.sidebar-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.sidebar-brand-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sidebar-brand-subtitle {
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+/* --- Usuario --- */
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  margin: 8px;
+  background-color: rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+}
+
+.sidebar-user-avatar {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-accent-1);
+  color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-user-name {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-role {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* --- Navegación --- */
+.sidebar-nav {
+  flex: 1;
+  padding: 8px;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  color: rgba(255,255,255,0.80);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: background-color var(--transition), color var(--transition);
+  /* Siempre visible — información no depende del hover */
+  min-height: 44px;
+}
+
+.sidebar-nav-item:hover {
+  background-color: rgba(255,255,255,0.12);
+  color: #ffffff;
+}
+
+/* Estado activo — visible sin hover */
+.sidebar-nav-item.active {
+  background-color: rgba(255,255,255,0.20);
+  color: #ffffff;
+  font-weight: 700;
+  border-left: 3px solid var(--color-accent-2);
+}
+
+.sidebar-nav-item:focus-visible {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: -2px;
+}
+
+.sidebar-nav-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sidebar-nav-label {
+  white-space: nowrap;
+}
+
+/* --- Footer / Logout --- */
+.sidebar-footer {
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 14px;
+  min-height: 44px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-md);
+  color: rgba(255,255,255,0.80);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.sidebar-logout:hover {
+  background-color: rgba(211, 47, 47, 0.25);
+  color: #ffffff;
+  border-color: rgba(211, 47, 47, 0.5);
+}
+
+.sidebar-logout:focus-visible {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: -2px;
+}

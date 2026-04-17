@@ -1,0 +1,225 @@
+/* ────────────────────────────────────────────
+   TOP NAV — Panel Administrativo
+   Logo izq | Items centrados | Usuario der
+──────────────────────────────────────────── */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #ffffff;
+  box-shadow: 0 2px 16px rgba(114, 129, 86, 0.12);
+}
+
+/* Franja de color arriba */
+.topnav-accent-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #728156, #B6C99C, #728156);
+}
+
+.topnav-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 28px;
+  height: 64px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── IZQUIERDA ── */
+.topnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.topnav-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.topnav-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.topnav-brand-name {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #728156;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.topnav-brand-sub {
+  font-size: 0.7rem;
+  color: #999;
+  font-weight: 400;
+}
+
+/* ── CENTRO: navegación ── */
+.topnav-nav {
+  justify-self: center;
+}
+
+.topnav-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  min-height: 44px;
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  border-radius: 6px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.topnav-link:hover {
+  color: #728156;
+  background: #F0F5E8;
+}
+
+.topnav-link--active {
+  color: #728156;
+  font-weight: 700;
+  border-bottom-color: #728156;
+  background: #F0F5E8;
+}
+
+.topnav-link:focus-visible {
+  outline: 3px solid #B6C99C;
+  outline-offset: 2px;
+}
+
+.topnav-link-icon {
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+}
+
+.topnav-link--active .topnav-link-icon,
+.topnav-link:hover .topnav-link-icon {
+  opacity: 1;
+}
+
+/* ── DERECHA ── */
+.topnav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-self: end;
+}
+
+.topnav-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topnav-avatar {
+  width: 36px;
+  height: 36px;
+  background: #728156;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(114, 129, 86, 0.35);
+}
+
+.topnav-user-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.topnav-user-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+}
+
+.topnav-user-role {
+  font-size: 0.68rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.topnav-logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  min-height: 36px;
+  background: transparent;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  color: #888;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.topnav-logout:hover {
+  background: #FFEBEE;
+  border-color: #FFCDD2;
+  color: #C62828;
+}
+
+.topnav-logout:focus-visible {
+  outline: 3px solid #B6C99C;
+  outline-offset: 2px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .topnav-inner {
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    padding: 0 16px;
+  }
+
+  .topnav-link span:last-child {
+    display: none;
+  }
+
+  .topnav-link {
+    padding: 8px 10px;
+  }
+
+  .topnav-user-meta {
+    display: none;
+  }
+
+  .topnav-brand-text {
+    display: none;
+  }
+}

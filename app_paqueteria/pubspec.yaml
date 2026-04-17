@@ -1,0 +1,37 @@
+name: discapacidad_sin_barreras
+description: App móvil para clientes del programa Discapacidad sin Barreras.
+publish_to: none
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Peticiones HTTP a la API
+  http: ^1.2.0
+
+  # Almacenamiento local simple para token y datos de sesión
+  shared_preferences: ^2.2.2
+
+  # Estado global (para el usuario autenticado)
+  provider: ^6.1.2
+
+  # Abrir links externos (YouTube) en la app o navegador
+  url_launcher: ^6.3.0
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logo.png

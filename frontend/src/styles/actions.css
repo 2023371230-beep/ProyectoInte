@@ -1,0 +1,15 @@
+/* Botones de acción en tablas — siempre visibles */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Celda de diagnóstico truncada */
+.diagnostico-cell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text-muted);
+}

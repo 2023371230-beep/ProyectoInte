@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green-900: #3a4230;
+  --color-green-800: #4d5c38;
+  --color-green-700: #5a6845;
+  --color-green-600: #728156;
+  --color-green-500: #88976C;
+  --color-green-400: #B6C99C;
+  --color-green-300: #CFE1BB;
+  --color-green-100: #E8F4DC;
+  --color-green-50:  #F4FAF0;
+
+  --font-family-sans: 'Montserrat', 'Segoe UI', sans-serif;
+}
